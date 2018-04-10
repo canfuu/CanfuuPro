@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <import resource="classpath:/resources/canfuu/spring/spring-persistence-config.xml"/>
+    <import resource="classpath:/resources/canfuu/spring/spring-response-config.xml"/>
+    <import resource="classpath:/resources/canfuu/spring/spring-factory-config.xml"/>
+    <import resource="classpath:/resources/canfuu/spring/spring-cache-config.xml"/>
+    <import resource="classpath:/resources/canfuu/spring/spring-entity-config.xml"/>
+    <import resource="classpath:/resources/canfuu/spring/spring-beans-config.xml"/>
+    <import resource="classpath:/resources/canfuu/spring/spring-aop-config.xml"/>
+</beans>

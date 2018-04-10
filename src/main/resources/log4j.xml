@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+
+    <appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="/usr/share/tomcat/logs/official/DayuWebLog"/>
+        <param name="datePattern" value="'_'yyyy-MM-dd-HH'.log'"/>
+        <param name="append" value="true"/>
+        <param name="bufferSize" value="8192"/>
+        <param name="bufferedIO" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="conversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} [ %t:%r ] - [ %p ] %m%n"/>
+        </layout>
+    </appender>
+    <appender name="sysout" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="conversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} [ %t:%r ] - [ %p ] %m%n"/>
+        </layout>
+    </appender>
+    <appender name="async" class="org.apache.log4j.AsyncAppender">
+        <param name="bufferSize" value="8192"/>
+        <appender-ref ref="file"/>
+    </appender>
+    <root>
+        <level value="debug"/>
+        <appender-ref ref="async"/>
+        <appender-ref ref="sysout"/>
+    </root>
+</log4j:configuration>

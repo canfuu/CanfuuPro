@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <!-- Cache -->
+    <bean id="redisOperate" class="com.canfuu.templet.ss.common.resources.cache.redis.impl.RedisOperateImpl" scope="prototype">
+        <constructor-arg name="clientNum" value="15"/>
+    </bean>
+    <bean id="servant" class="com.canfuu.templet.ss.common.resources.cache.redis.synchronization.Servant" init-method="init"/>
+    <bean id="master" class="com.canfuu.templet.ss.common.resources.cache.redis.synchronization.Master" init-method="init"/>
+    <bean id="threadCache" class="com.canfuu.templet.ss.common.resources.cache.threads.ThreadCache"/>
+    <bean id="lockCache" class="com.canfuu.templet.ss.common.resources.cache.threads.LockCache"/>
+    <bean id="commonDao" class="com.canfuu.templet.ss.common.persistence.CommonDaoImpl"/>
+    <bean id="cachePool" class="com.canfuu.templet.ss.common.resources.cache.CachePool"/>
+
+</beans>
